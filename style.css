@@ -6,8 +6,9 @@
 }
 
 body {
-    background-color: #141414; /* Cor de fundo principal (preto Netflix) */
-    color: #ffffff; /* Cor do texto principal (branco) */
+    /* O PRETO continua como cor de fundo principal */
+    background-color: #121212; 
+    color: #ffffff; /* Texto branco para contraste */
     font-family: Arial, sans-serif;
 }
 
@@ -16,12 +17,14 @@ body {
     padding: 40px 20px;
     background-color: #000000;
     text-align: center;
-    border-bottom: 4px solid #FFD700; /* Linha amarela de destaque */
+    /* Trocamos a borda amarela pela VERDE ESCURO */
+    border-bottom: 4px solid #2E7D32; 
 }
 
 .main-header h1 {
-    color: #FFD700; /* Nosso amarelo ouro! */
-    font-family: 'Bebas Neue', sans-serif; /* Fonte de impacto */
+    /* Trocamos a cor do título para VERDE ESCURO */
+    color: #2E7D32; 
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 4em;
     letter-spacing: 3px;
 }
@@ -42,48 +45,54 @@ main {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #ffffff;
-    border-left: 5px solid #FFD700; /* Detalhe amarelo no título da seção */
+    /* Detalhe VERDE ESCURO no título da seção */
+    border-left: 5px solid #2E7D32; 
     padding-left: 10px;
 }
 
 /* A grade de filmes */
 .movie-grid {
     display: grid;
-    /* Isso cria colunas que se ajustam ao tamanho da tela! */
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 20px; /* Espaço entre os pôsteres */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-/* Cartão de cada filme (agora é um link) */
+/* Cartão de cada filme */
 .movie-card {
-    background-color: #222;
+    /* Aplicamos o MARROM como fundo do card */
+    background-color: #3E2723; /* Um tom de marrom escuro e elegante */
     border-radius: 5px;
-    overflow: hidden; /* Garante que a imagem não saia da borda */
-    border: 1px solid #333;
-    transition: transform 0.3s, border-color 0.3s;
-    text-decoration: none; /* Remove o sublinhado do link */
+    overflow: hidden;
+    border: 1px solid #1b1b1b;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    text-decoration: none;
     color: white;
     display: flex;
     flex-direction: column;
 }
 
-.movie-card:hover {
-    transform: scale(1.05); /* Efeito ao passar o mouse */
-    border-color: #FFD700; /* Borda amarela ao destacar */
+/* Efeito de foco com as novas cores */
+.movie-card.focused {
+    transform: scale(1.08);
+    /* Borda VERDE ESCURO forte no elemento focado */
+    border: 4px solid #2E7D32; 
+    /* Brilho VERDE ESCURO para destacar */
+    box-shadow: 0 0 20px rgba(46, 125, 50, 0.7); 
+    z-index: 10;
 }
 
 .movie-card img {
     width: 100%;
     height: auto;
     display: block;
-    aspect-ratio: 2/3; /* Proporção clássica de pôster */
+    aspect-ratio: 2/3;
     object-fit: cover;
 }
 
 .movie-card .movie-info {
     padding: 10px;
     text-align: center;
-    flex-grow: 1; /* Faz esta área crescer para alinhar os cards */
+    flex-grow: 1;
 }
 
 .movie-card .movie-info h3 {
@@ -93,7 +102,7 @@ main {
 
 .movie-card .movie-info p {
     font-size: 0.8em;
-    color: #aaa;
+    color: #ccc; /* Ajustado para melhor leitura no fundo marrom */
     margin-top: 5px;
 }
 
@@ -106,3 +115,4 @@ main {
     font-size: 0.9em;
     color: #777;
 }
+
